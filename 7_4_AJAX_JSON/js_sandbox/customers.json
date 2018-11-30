@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Rich Hirst",
+    "company": "RJH Systems",
+    "phone": "07711032285"
+  },
+  {
+    "id": 2,
+    "name": "Ty Simpson",
+    "company": "Pubs Galore",
+    "phone": "03454554656"
+  },
+  {
+    "id": 3,
+    "name": "Tara Williams",
+    "company": "Traversy Media",
+    "phone": "111-222-3333"
+  }
+]
