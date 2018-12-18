@@ -23,22 +23,36 @@ const posts = [
 
 // getPosts();
 
-function createPost(post, callback){
-  setTimeout(function() {
-    posts.push(post);
-    callback();
-  }, 2000);
-  }
-  
-  function getPosts() {
+function createPost(post) {
+  return new Promise(function(resolve,reject){
     setTimeout(function() {
-      let output = '';
-      post.forEach(function(post){
-        output += `<li>${post.title}</li>`;
-      });
-      document.body.innerHTML = output;
-    }, 1000);
-  }
+      posts.push(post);
 
-  createPost({title: 'Post Three', body: 'this is post three'}, getPosts);
+      const error = false;
+      
+      if(!error){
+        resolve();
+      } else {
+        reject('Error: Something went wrong');
+      }
+
+      resolve();
+    }, 200);
+  });
+}
   
+function getPosts() {
+  setTimeout(function() {
+    let output = '';
+    posts.forEach(function(post){
+    output += `<li>${post.title}</li>`;
+  });
+    document.body.innerHTML = output;
+  }, 100);
+}
+
+  createPost({title: 'Post Three', body: 'this is post three'})
+  .then(getPosts)
+  .catch(function(err){
+    console.log(err)
+  });
